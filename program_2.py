@@ -6,10 +6,14 @@
 import random
 def main():
   user_input=int(input('Enter the integer number of random numbers to be generated.'))
-  outfile=open('rand.txt','w')
-  for count in range(user_input):
-    randnumb=random.randint(1,500)
-    outfile.write(str(randnumb)+'\n')
-  outfile.close()
+  if user_input>1000:
+    print('Please enter a number lower than 1001.')
+    main()
+  else:
+    outfile=open('rand.txt','w')
+    for count in range(user_input):
+      randnumb=random.randint(1,500)
+      outfile.write(str(randnumb)+'\n')
+    outfile.close()
 
 main()
