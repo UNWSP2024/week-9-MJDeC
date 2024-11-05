@@ -6,11 +6,13 @@
 def count_file_lines():
     ######################
     # Add your code here #
+    infile=open('names.txt','r')
+    ncount=len(infile.readlines())    
+    infile.close()
     ######################
     print('In the count_file_lines function')
-
-
-
+    print('there are', ncount,'students listed.')
+    
 # You don't need to change anything below this line:
 if __name__ == '__main__':
     count_file_lines()

@@ -11,8 +11,22 @@
 def sum_numbers_from_file():
     ######################
     # Add your code here #
+    try:
+        infile=('numbers.txt','r')
+        total=0
+        for line in 'numbers.txt':
+            number=float(line.strip())
+            total+=number
+        filename = "numbers.txt" 
+        result = sum_numbers_in_file(filename)
+        infile.close()
+        print('In the sum_numbers_from_file function')
+        print('the sum of numbers is', result,'.')
+    except IOError:
+        print('There was an error locating and/or reading the file. Apologies for the inconvenience.')
+    except ValueError:
+        print('There was an error converting file items to numbers. Apologies for the inconvenience.')
     ######################
-    print('In the sum_numbers_from_file function')
 
 # You don't need to change anything below this line:
 if __name__ == '__main__':
